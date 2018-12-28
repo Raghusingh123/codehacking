@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Post;
 use App\Role;
 use App\Photo;
+use App\category;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\PostsCreateRequest;
@@ -31,8 +32,8 @@ class AdminPostsController extends Controller
      */
     public function create()
     {
-        $roles = Role::lists('name','id')->all();
-        return view('admin.posts.create', compact('roles'));
+        $categories = category::lists('name','id')->all();
+        return view('admin.posts.create', compact('categories'));
     }
 
     /**
